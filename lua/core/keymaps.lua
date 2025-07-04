@@ -1,5 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.doge_enable_mappings = 1
+vim.g.doge_mapping = "<leader>dc"
 
 vim.opt.backspace = '2'
 vim.opt.showcmd = true

@@ -148,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/x6galixia/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-doge"] = {
+    loaded = true,
+    path = "/home/x6galixia/.local/share/nvim/site/pack/packer/start/vim-doge",
+    url = "https://github.com/kkoomen/vim-doge"
   }
 }
 

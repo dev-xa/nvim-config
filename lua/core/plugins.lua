@@ -12,28 +12,39 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+  ----------------------------------------------------------------
+  -- 📦 Package Manager
+  ----------------------------------------------------------------
   use 'wbthomason/packer.nvim'
+
+  ----------------------------------------------------------------
+  -- 🎨 UI / Themes
+  ----------------------------------------------------------------
   use 'ellisonleao/gruvbox.nvim'
-  use 'nvim-tree/nvim-tree.lua'
-  use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
+  use 'nvim-tree/nvim-web-devicons'
+  use 'nvim-tree/nvim-tree.lua'
+
+  ----------------------------------------------------------------
+  -- 🌲 Treesitter
+  ----------------------------------------------------------------
   use 'nvim-treesitter/nvim-treesitter'
+
+  ----------------------------------------------------------------
+  -- 🔍 Telescope (Fuzzy Finder)
+  ----------------------------------------------------------------
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.5',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
+  ----------------------------------------------------------------
+  -- 📄 Documentation Generator
+  ----------------------------------------------------------------
   use({
-    "zbirenbaum/dox.nvim",
-    config = function()
-      require("dox").setup({
-        mappings = {
-          doc_block = "<leader>dc",   -- create doc block above current line
-          doc_current = "<leader>do", -- document current line (if function)
-        },
-      })
-    end,
+    "kkoomen/vim-doge",
+    run = ":call doge#install()"
   })
 
   ----------------------------------------------------------------
@@ -54,12 +65,10 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
 
   ----------------------------------------------------------------
-
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
-
+  -- 🔄 Sync if fresh install
+  ----------------------------------------------------------------
   if packer_bootstrap then
     require('packer').sync()
   end
 end)
+
