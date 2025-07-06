@@ -15,6 +15,10 @@ vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.autoindent = true
+
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
