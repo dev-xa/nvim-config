@@ -23,3 +23,12 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
 end)
+
+vim.cmd [[
+  augroup remember_folds
+    autocmd!
+    autocmd BufWinLeave *.* mkview
+    autocmd BufWinEnter *.* silent! loadview
+  augroup END
+]]
+

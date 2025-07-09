@@ -29,6 +29,10 @@ return require('packer').startup(function(use)
   -- 🌲 Treesitter
   ----------------------------------------------------------------
   use 'nvim-treesitter/nvim-treesitter'
+  use {
+    'nvim-treesitter/playground',
+    cmd = 'TSPlaygroundToggle'
+  }
 
   ----------------------------------------------------------------
   -- 🔍 Telescope (Fuzzy Finder)
@@ -64,6 +68,14 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
+  -- lazy.nvim or packer users
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
   ----------------------------------------------------------------
   -- 🔄 Sync if fresh install
   ----------------------------------------------------------------
@@ -71,4 +83,3 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
-
